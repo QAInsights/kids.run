@@ -84,11 +84,57 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-/* Utilities */
 .container {
-  max-width: 760px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1200px) {
+  .dashboard {
+    grid-template-columns: 500px 1fr;
+    max-width: 1500px;
+    padding: 0 3rem;
+  }
+}
+
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-family: var(--font-body);
+}
+
+.plan-table th, .plan-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.plan-table th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.plan-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* Match dark mode aesthetic roughly, or rely on surface-hover */
+}
+
+[data-theme="light"] .plan-table tbody tr:hover {
+  background-color: var(--surface-hover);
 }
 
 .card {
