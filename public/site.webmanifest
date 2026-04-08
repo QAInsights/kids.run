@@ -1,0 +1,16 @@
+{
+  "name": "Kids.Run",
+  "short_name": "Kids.Run",
+  "description": "Multi stop route optimizer for picking up kids.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ec4899"
+}
