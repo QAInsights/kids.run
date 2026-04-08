@@ -1,0 +1,351 @@
+:root {
+  /* Playful & Energetic, UX-Friendly Light Mode */
+  --bg-color: hsl(40, 30%, 97%); /* Soft warm cream */
+  --surface: hsl(0, 0%, 100%);
+  --surface-hover: hsl(40, 30%, 94%);
+  
+  --primary: hsl(340, 85%, 60%); /* Energetic Pink/Coral */
+  --primary-hover: hsl(340, 85%, 55%);
+  --primary-light: hsl(340, 85%, 95%);
+  
+  --secondary: hsl(210, 95%, 55%); /* Sky Blue */
+  --secondary-hover: hsl(210, 95%, 50%);
+  
+  --accent: hsl(45, 100%, 55%); /* Bright Yellow */
+  --success: hsl(155, 75%, 45%); /* Spring Green */
+  --success-light: hsl(155, 75%, 90%);
+  --danger: hsl(350, 85%, 60%);
+  
+  --text-main: hsl(230, 30%, 15%);
+  --text-muted: hsl(230, 15%, 45%);
+  
+  --border-color: hsl(40, 20%, 90%);
+  
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-full: 9999px;
+  
+  /* Soft, airy shadows instead of chunky ones */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.08);
+  
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+[data-theme="dark"] {
+    /* Moody but vibrant Dark Mode */
+    --bg-color: hsl(230, 25%, 12%);
+    --surface: hsl(230, 25%, 16%);
+    --surface-hover: hsl(230, 25%, 20%);
+    
+    --primary: hsl(340, 90%, 65%);
+    --primary-hover: hsl(340, 90%, 75%);
+    --primary-light: hsl(340, 90%, 25%);
+    
+    --secondary: hsl(210, 100%, 65%);
+    --secondary-hover: hsl(210, 100%, 75%);
+    
+    --accent: hsl(45, 100%, 60%);
+    --success: hsl(155, 65%, 50%);
+    --success-light: hsl(155, 65%, 20%);
+    --danger: hsl(350, 85%, 65%);
+    
+    --text-main: hsl(230, 20%, 95%);
+    --text-muted: hsl(230, 15%, 65%);
+    
+    --border-color: hsl(230, 20%, 25%);
+    
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Utilities */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.card {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.w-full { width: 100%; }
+
+/* Typography */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.9rem; font-weight: 600; }
+.text-lg { font-size: 1.15rem; }
+.text-xl { font-size: 1.35rem; }
+.text-2xl { font-size: 1.75rem; }
+.text-3xl { font-size: 2.25rem; }
+.font-medium { font-weight: 600; }
+.font-bold { font-weight: 800; }
+.text-muted { color: var(--text-muted); }
+.text-primary { color: var(--primary); }
+
+/* Forms & Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.input-label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-left: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: var(--surface);
+  box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+[data-theme="dark"] .input { background-color: hsl(230, 25%, 10%); border-color: hsl(230, 20%, 35%); }
+[data-theme="dark"] .input:focus { background-color: hsl(230, 25%, 14%); border-color: var(--primary); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: #fff;
+}
+
+.btn-success:hover {
+  filter: brightness(1.1);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--text-muted);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-muted);
+  padding: 0.6rem;
+  border-radius: var(--radius-full);
+  border: none !important;
+  outline: none !important;
+}
+
+.btn-ghost:hover {
+  background-color: var(--surface-hover);
+  color: var(--text-main);
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pills & Badges */
+.pill {
+  font-family: var(--font-body);
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 1rem;
+  bottom: 1rem;
+  width: 4px;
+  background-color: var(--bg-color);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.35rem; 
+  top: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--surface);
+  box-shadow: 0 0 0 4px var(--surface), 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Fancy colorful backgrounds for kids */
+.bg-blob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* AutoComplete overrides */
+.pac-container {
+  border-radius: var(--radius-md) !important;
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  box-shadow: var(--shadow-lg) !important;
+  border: 1px solid var(--border-color) !important;
+  margin-top: 8px;
+  padding: 0.5rem !important;
+}
+.pac-item {
+  padding: 0.75rem 1rem !important;
+  cursor: pointer !important;
+  border: none !important;
+  border-radius: 8px;
+}
+.pac-item:hover {
+  background-color: var(--surface-hover) !important;
+}
